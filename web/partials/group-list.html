@@ -1,0 +1,13 @@
+<div align="center">
+    <div class="search">
+        <input placeholder="Search" class="form-control" ng-model="query" id="search" ng-model-options="{ debounce: 500 }" ng-change="filter()">
+    </div>
+    <table class="table table-striped table-bordered">
+        <tbody>
+        <tr ng-repeat="group in groups">
+            <td><a href="#/groups/{{group._id}}">{{group.name}}</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <pagination items-per-page=5 total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+</div>

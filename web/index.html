@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app="adminApp">
+<head>
+  <meta charset="utf-8">
+  <title>Administration</title>
+  <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/app.css">
+
+  <script src="libs/angular/angular.min.js"></script>
+  <script src="libs/angular-route/angular-route.min.js"></script>
+  <script src="libs/ng-breadcrumbs/dist/ng-breadcrumbs.min.js"></script>
+  <script src="libs/angular-ui-bootstrap/src/pagination/pagination.js"></script>
+  <script src="js/web.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/services.js"></script>
+</head>
+<body>
+
+  <ol class="breadcrumb" ng-controller="BreadcrumbController">
+    <li ng-repeat="breadcrumb in breadcrumbs.getDynamic() track by breadcrumb.path" ng-class="{ active: $last }">
+      <a ng-if="!$last" ng-href="#{{ breadcrumb.path }}" ng-bind="breadcrumb.label" class="margin-right-xs"></a>
+      <span ng-if="$last" ng-bind="breadcrumb.label"></span>
+    </li>
+  </ol>
+
+  <div class="view-container">
+    <div ng-view class="view-frame"></div>
+  </div>
+
+</body>
+</html>
