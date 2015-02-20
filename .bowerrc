@@ -1,4 +1,5 @@
 {
-  "directory": "web/libs",
+  "cwd":"web",
+  "directory": "libs",
   "interactive": false
 }

@@ -39,7 +39,11 @@ adminApp.config(['$routeProvider',
           controller: 'GroupUsersCtrl',
           label: 'Users'
         }).
+        when('/',{
+          templateUrl: 'partials/home.html',
+          label: 'Home'
+        }).
       otherwise({
-        //redirectTo: '/users'
+        redirectTo: '/'
       });
   }]);

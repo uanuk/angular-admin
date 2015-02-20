@@ -17,6 +17,7 @@
     "mongodb": "*",
     "mongoose": "^3.8.22",
     "ejs":"*",
-    "mongoose-pagination":"*"
+    "mongoose-pagination":"*",
+    "nconf ":"*"
   }
 }

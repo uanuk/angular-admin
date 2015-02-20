@@ -57,8 +57,12 @@ app.use(function(err, req, res, next) {
     });
 });
 
+var nconf = require('nconf');
+nconf.argv().env();
+nconf.file({ file: 'config.json' });
+
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/administration', function(err) {
+mongoose.connect(nconf.get('db:path'), function(err) {
     if(err) {
         console.log('connection error', err);
     } else {

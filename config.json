@@ -1,0 +1,8 @@
+{
+  "db" : {
+    "path":"mongodb://localhost:27017/administration"
+  },
+  "http":{
+    "port":3000
+  }
+}
